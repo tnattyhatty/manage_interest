@@ -1,0 +1,14 @@
+react-app-env.d.ts
+node_modules
+package-lock.json
+public
+build
+dist
+out
+.vscode
+.next
+.cache
+yarn.lock
+next.config.ts
+next-env.d.ts
+.husky
