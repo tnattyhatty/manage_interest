@@ -1,10 +1,6 @@
-import { AuthProvider } from '@/components/AuthProvider';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Manage Interest',
@@ -18,9 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={'min-h-screen'}>
         <AntdRegistry>
-          <AuthProvider>{children}</AuthProvider>
+          {/* <AuthProvider> */}
+          {children}
+          {/* </AuthProvider> */}
         </AntdRegistry>
       </body>
     </html>

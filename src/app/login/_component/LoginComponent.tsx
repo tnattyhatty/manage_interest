@@ -17,13 +17,14 @@ const LoginComponent: FC<{}> = memo(() => {
     const res = await signIn('credentials', {
       ...values,
       redirect: false,
+      callbackUrl: '/',
     });
     console.log('RES: ', res);
   }, []);
 
   return (
     <div>
-      <Form className="space-y-4 md:space-y-6" layout="vertical" name="loginForm" initialValues={{ remember: true }} onFinish={onFinish} autoComplete="off">
+      <Form className="space-y-4 md:space-y-6" layout="vertical" name="loginForm" initialValues={{ remember: true }} onFinish={onFinish} autoComplete="on">
         <Form.Item<FieldType>
           label={<span className="font-light text-gray-500 dark:text-gray-400">Username</span>}
           name="email"
@@ -56,7 +57,7 @@ const LoginComponent: FC<{}> = memo(() => {
         </Form.Item>
         <p className="text-sm font-light text-gray-500 dark:text-gray-400">
           <span>Don’t have an account yet? </span>
-          <Link href="/auth/register" className="font-medium text-primary-600 hover:underline dark:text-primary-500">
+          <Link href="/register" className="font-medium text-primary-600 hover:underline dark:text-primary-500">
             Sign up
           </Link>
         </p>

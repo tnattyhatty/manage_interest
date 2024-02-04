@@ -6,12 +6,14 @@ const nextConfig = {
   cleanDistDir: true,
   optimizeFonts: true,
   reactStrictMode: false,
-  swcMinify: false,
+  swcMinify: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
   experimental: {
     typedRoutes: true,
-    serverActions: false,
+    serverActions: {
+      allowedOrigins: ['localhost:5001', '*.localhost:5001'],
+    },
   },
   typescript: {
     // !! WARN !!
