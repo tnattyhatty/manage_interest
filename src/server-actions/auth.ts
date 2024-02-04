@@ -27,21 +27,22 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: '/', //(4) custom signin page path
+    error: '/found-error',
   },
   providers: [
     Credentials({
       name: 'Credentials',
       credentials: {
-        username: { label: 'Username', type: 'text', placeholder: 'username' },
+        email: { label: 'Username', type: 'text', placeholder: 'username' },
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials, req) {
-        const { username, password } = credentials as {
-          username: string;
+        const { email, password } = credentials as {
+          email: string;
           password: string;
         };
 
-        return userService.authenticate(username, password); //(5)
+        return userService.authenticate(email, password); //(5)
       },
     }),
   ],

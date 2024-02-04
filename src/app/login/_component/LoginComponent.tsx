@@ -17,14 +17,14 @@ const LoginComponent: FC<{}> = memo(() => {
     const res = await signIn('credentials', {
       ...values,
       redirect: false,
-      callbackUrl: '/',
+      callbackUrl: '/login',
     });
     console.log('RES: ', res);
   }, []);
 
   return (
     <div>
-      <Form className="space-y-4 md:space-y-6" layout="vertical" name="loginForm" initialValues={{ remember: true }} onFinish={onFinish} autoComplete="on">
+      <Form className="space-y-4 md:space-y-6" layout="vertical" name="loginForm" onFinish={onFinish} autoComplete="on">
         <Form.Item<FieldType>
           label={<span className="font-light text-gray-500 dark:text-gray-400">Username</span>}
           name="email"
